@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乐淘后台管理系统-首页</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!--侧边栏-->
+<aside class="ad_aside">
+    <div class="brand"><a href="index.html">ITCAST</a></div>
+    <div class="user">
+        <img src="images/default.png" alt="">
+        <span>超级管理员</span>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="userManage.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+            <li>
+                <a href="javascript:;"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
+                <div class="child" style="display: none">
+                    <a href="categoryFirst.html">一级分类</a>
+                    <a href="categorySecond.html">二级分类</a>
+                </div>
+            </li>
+            <li><a href="productManage.html"><span class="glyphicon glyphicon-tags"></span> 商品管理</a></li>
+        </ul>
+    </div>
+</aside>
+<!--内容-->
+<section class="ad_section">
+    <nav class="ad_nav">
+        <a data-menu="" href="javascript:;"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a data-logout="" href="#myModal" data-toggle="modal" ><span class="glyphicon glyphicon-log-out"></span></a>
+    </nav>
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="index.html">管理系统</a></li>
+            <li class="active">首页</li>
+        </ol>
+        <div class="ad_content">
+            <!--柱状图 分季度统计注册人数-->
+            <div class="picTable"></div>
+            <!--饼状图 品牌销售-->
+            <div class="picTable"></div>
+        </div>
+    </div>
+</section>
+<!-- Modal -->
+<!--<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> 您确定要退出后台管理系统吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">退出</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<script src="assets/jquery/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/echarts/echarts.min.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

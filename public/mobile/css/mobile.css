@@ -1,0 +1,167 @@
+/*公用的样式*/
+/*布局容器*/
+.lt_container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/*通栏*/
+.lt_topBar{
+    width: 100%;
+    height: 45px;
+    background: #069;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.lt_topBar h3{
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    line-height: 45px;
+}
+.lt_topBar a{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    color: #fff;
+}
+.lt_topBar a.left{
+    left: 0;
+}
+.lt_topBar a.right{
+    right: 0;
+}
+/*内容*/
+.lt_wrapper{
+    width: 100%;
+    height: 100%;
+    padding-top: 45px;
+    padding-bottom: 55px;
+}
+.lt_wrapper.cart{
+    padding-bottom: 85px;
+}
+.lt_wrapper .lt_content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+/*tab*/
+.lt_tabs{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    background: #069;
+    padding-top: 8px;
+}
+.lt_tabs a{
+    color: #fff;
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.lt_tabs a p{
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.lt_tabs a.now{
+    color: #fa0;
+}
+.lt_tabs a.now p{
+    color: #fa0;
+}
+
+/*产品*/
+.lt_product{
+    padding: 0 10px;
+}
+.lt_product ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.lt_product ul li{
+    width: 50%;
+    float: left;
+}
+.lt_product ul li:nth-child(2n-1){
+    padding-right: 5px;
+}
+.lt_product ul li:nth-child(2n){
+    padding-left: 5px;
+}
+/*产品容器*/
+.lt_proBox{
+    display: block;
+    box-shadow: 0 0 1px #666;
+    background: #fff;
+    margin-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.lt_proBox .img{
+    display: block;
+    width: 100%;
+}
+.lt_proBox .name{
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    padding: 0 5px;
+}
+.lt_proBox .nowPrice{
+    color: red;
+    font-size: 12px;
+}
+.lt_proBox .oldPrice{
+    font-size: 12px;
+    color: #666;
+    text-decoration: line-through;
+}
+.lt_proBox button{
+    background: #069;
+    color: #fff;
+}
+/*搜索模块*/
+.lt_search{
+    padding: 10px;
+    position: relative;
+}
+.lt_search input{
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #069;
+    font-size: 12px;
+    text-align: left;
+    padding: 0 70px 0 10px;
+    margin-bottom: 0;
+}
+.lt_search a{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 60px;
+    height: 30px;
+    background: #069;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    /*border-radius: 0 2px 2px 0;*/
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}

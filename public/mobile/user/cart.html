@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传智电商-购物车</title>
+    <link rel="stylesheet" href="../assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="../css/user/cart.css">
+</head>
+<body>
+<div class="lt_container">
+    <div class="lt_topBar">
+        <a href="javascript:history.back();" class="left"><span class="fa fa-chevron-left"></span></a>
+        <h3>购物车</h3>
+        <a href="javascript:;" class="right"><span class="fa fa-refresh"></span></a>
+    </div>
+    <div class="lt_wrapper cart">
+        <div class="lt_content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-table-view mui-table-view-chevron" id="cart">
+                        <!--TODO-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lt_trade">
+        订单总额：&yen;<span>00.00</span>
+        <a href="javascript:;">生成订单</a>
+    </div>
+    <div class="lt_tabs">
+        <a href="../index.html"><span class="fa fa-home"></span><p>首页</p></a>
+        <a href="../category.html"><span class="fa fa-bars"></span><p>分类</p></a>
+        <a href="../user/cart.html" class="now"><span class="fa fa-shopping-cart"></span><p>购物车</p></a>
+        <a href="../user/index.html"><span class="fa fa-user"></span><p>个人中心</p></a>
+    </div>
+</div>
+<script type="text/template" id="cartTpl">
+    {{each $data item i}}
+    <li class="mui-table-view-cell">
+        <div class="mui-slider-right mui-disabled">
+            <a data-id="{{item.id}}" class="mui-btn mui-btn-blue fa fa-edit"></a>
+            <a data-id="{{item.id}}" data-index="{{i}}" class="mui-btn mui-btn-red fa fa-trash"></a>
+        </div>
+        <div class="mui-slider-handle">
+            <div class="mui-table-cell">
+                <a class="mui-navigate-right">
+                    <%  var picAddr = '/mobile/images/none01.jpg';
+                        if(item.pic && item.pic.length && item.pic[0].picAddr){
+                            picAddr = item.pic[0].picAddr;
+                        }
+                    %>
+                    <img class="mui-media-object mui-pull-left"
+                         onerror="this.src='/mobile/images/none01.jpg'" src="{{picAddr}}">
+                    <div class="mui-media-body">
+                        <p class="proName mui-ellipsis-2">{{item.proName}}</p>
+                        <p class="proPrice">
+                            <span class="now">&yen;{{item.price}}</span>
+                            <span class="old">&yen;{{item.oldPrice}}</span>
+                            <span class="num">x{{item.num}}双</span>
+                        </p>
+                        <p class="proSize">鞋码：{{item.size}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <input type="checkbox" data-id="{{item.id}}" {{item.isChecked?"checked":""}}>
+    </li>
+    {{/each}}
+</script>
+<script type="text/template" id="editTpl">
+    <div class="lt_pro_Size" style="text-align: left">
+        尺码：
+        <%
+        var sizeArr = ($data.productSize || '40-50').split('-');
+        var start = sizeArr[0],end = sizeArr[1];
+        for(var i = start; i<= end; i++){
+        %>
+        <span data-value="{{i}}" class="{{$data.size==i?'now':''}}">{{i}}</span>
+        <% } %>
+    </div>
+    <div class="lt_pro_Num" style="text-align: left">
+        数量：
+        <div>
+            <span data-type="0">-</span>
+            <input type="number" value="{{$data.num}}" readonly data-max="{{$data.productNum}}">
+            <span data-type="1">+</span>
+        </div>
+        剩余：{{$data.productNum}} 件
+    </div>
+</script>
+<script src="../assets/mui/js/mui.min.js"></script>
+<script src="../assets/zepto/zepto.min.js"></script>
+<script src="../assets/artTemplate/template-web.js"></script>
+<script src="../js/mobile.js"></script>
+<script src="../js/user/cart.js"></script>
+</body>
+</html>

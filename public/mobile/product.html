@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传智电商-商品详情</title>
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+<div class="lt_container">
+    <div class="lt_topBar">
+        <a href="javascript:history.back();" class="left"><span class="fa fa-chevron-left"></span></a>
+        <h3>搜索列表</h3>
+        <a href="index.html" class="right"><span class="fa fa-home"></span></a>
+    </div>
+    <div class="lt_wrapper">
+        <div class="lt_content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--TODO-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lt_addCart">
+        <a class="left" href="user/cart.html"><span class="fa fa-shopping-cart"></span></a>
+        <div class="right">
+            <a href="javascript:;" class="cart">加入购物车</a>
+            <a href="javascript:;" class="pay">立即支付</a>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="detail">
+    <%
+        var picArr = [{picAddr:'images/none01.jpg'}];
+        if($data.pic && $data.pic.length){
+            picArr = $data.pic;
+        }
+    %>
+    <div class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#"><img src="{{picArr[picArr.length-1].picAddr}}" alt=""></a>
+            </div>
+            {{each picArr}}
+            <div class="mui-slider-item">
+                <a href="#"><img onerror="this.src='images/none01.jpg'" src="{{$value.picAddr||'images/none01.jpg'}}" alt=""></a>
+            </div>
+            {{/each}}
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#"><img src="{{picArr[0].picAddr}}" alt=""></a>
+            </div>
+        </div>
+        <div class="mui-slider-indicator">
+            {{each picArr}}
+            <div class="mui-indicator {{$index===0?'mui-active':''}}"></div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="lt_pro_Name">
+        <p class="mui-ellipsis-2">{{$data.proName}}</p>
+    </div>
+    <div class="lt_pro_Price">
+        价格：<span class="now">¥{{$data.price}}</span> <span class="old">¥{{$data.oldPrice}}</span>
+    </div>
+    <div class="lt_pro_Size">
+        尺码：
+        <%
+            var sizeArr = ($data.size || '40-50').split('-');
+            var start = sizeArr[0],end = sizeArr[1];
+            for(var i = start; i<= end; i++){
+        %>
+            <span data-value="{{i}}">{{i}}</span>
+        <% } %>
+    </div>
+    <div class="lt_pro_Num">
+        数量：
+        <div>
+            <span data-type="0">-</span>
+            <input type="number" value="1" data-max="{{$data.num}}" readonly>
+            <span data-type="1">+</span>
+        </div>
+        剩余：{{$data.num}} 件
+    </div>
+</script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-web.js"></script>
+<script src="js/mobile.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

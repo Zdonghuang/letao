@@ -1,0 +1,13 @@
+.lt_button{
+    padding: 10px;
+}
+.lt_button a{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background: #dd524d;
+    font-size: 12px;
+    display: block;
+    border-radius: 4px;
+}

@@ -1,0 +1,102 @@
+[class^="lt_pro_"]{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.lt_pro_Name p{
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 0;
+}
+.lt_pro_Price{
+
+}
+.lt_pro_Price .now{
+    color: red;
+    font-size: 20px;
+}
+.lt_pro_Price .old{
+    font-size: 12px;
+    text-decoration: line-through;
+    color: #666;
+}
+.lt_pro_Size{
+    line-height: 36px;
+}
+.lt_pro_Size span{
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+.lt_pro_Size span.now{
+    background: #fa0;
+}
+.lt_pro_Num{
+    line-height: 40px;
+}
+.lt_pro_Num > div{
+    display: inline-block;
+    width: 92px;
+    height: 32px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+.lt_pro_Num > div span{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+}
+.lt_pro_Num > div input{
+    width: 30px;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+    border:none;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+    text-align: center;
+    border-radius: 0;
+    margin-bottom: 0;
+    float: left;
+}
+/*加入购物车*/
+.lt_addCart{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 55px;
+    width: 100%;
+    background: #f5f5f5;
+    border-top: 1px solid #ccc;
+}
+.lt_addCart .left{
+    height: 54px;
+    width: 55px;
+    line-height: 55px;
+    text-align: center;
+    float: left;
+    color: #333;
+}
+.lt_addCart .right{
+    overflow: hidden;
+    padding-right: 10px;
+}
+.lt_addCart .right a{
+    width: 48%;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    float: left;
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+.lt_addCart .right a.cart{
+    margin-right: 4%;
+    background: #991020;
+}
+.lt_addCart .right a.pay{
+    background: #fa672d;
+}
